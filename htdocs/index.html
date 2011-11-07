@@ -1,0 +1,26 @@
+<! DOCTYPE HTML>
+<html>
+	<!--Thomas Shadwell-->
+	<head>
+		<title>Parliamentary Info</title>
+		<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-1.7-development-only.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script src="main.js"></script>
+	</head>
+	<body onload="$('#Everything').fadeIn('slow');">
+		<div id="Everything">
+			<h1><b id="green">Parliament</b><b id="black">.info</b></h1>
+			<div id="formcontainer"><input name="input" id="input" placeholder="Type a question..." onkeypress="keyPress(event)"/><input id="subm" type="button" value="Ask" onclick="Answer();"/></div>
+			<div id="response"></div>
+			<div id="suggest">
+				<i>For example:</i>
+				Who is the MP for <span class="highlight">SW1A 0AA</span>?<br/>
+				What does my MP think about <span class="highlight">the EU</span>? &lt;= This feature is unfinished
+			</div>
+			<div  id="html5"><a href="http://twitter.com/#!/tshadwell"><img src="https://secure.gravatar.com/avatar/5d49eae7506256d5a432cbef0c4b38b0?s=50">@tshadwell</a>- created for Rewired State Parliament.</div>
+		</div>
+		<script src="autohint.js"></script>
+	</body>
+</html>
