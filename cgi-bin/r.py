@@ -148,10 +148,10 @@ if "q" in form:
 			con2.close()
 	elif  ( ( (not q.find("mp") == -1) and (not q.find("who") == -1 ) )  and (q.find("for") ==-1)):
 		out ="If you're looking for your MP, ask: <i>Who is the mp for <b class=\"highlight\">postcode</b></i>?"
-	elif ((not q.find("thomas") ==-1)or(not q.find("tom") ==-1)) and (not q.find("cool") == -1):
+	elif ((not q.find("thomas") ==-1)or(not q.find("tom") ==-1)) and (not q.find("cool") == -1): #Suggested by alan - no egotism here.
 		out="Most certianly yes."
 	else:
 		out="Sorry, I didn't understand what you said.<br/> :("
 else:
-	out = "Please type a quesiton in the box above."
+	out = "Please type a question in the box above."
 print(out)
