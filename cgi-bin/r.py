@@ -13,6 +13,15 @@ print  ()
 
 form = cgi.FieldStorage()
 out = ""
+def PartyColour(partyname):
+	if partyname == "Labour":
+		return "ff0000"
+	if partyname == "Conservative":
+		return "0000ff"
+	if partyname == "Liberal Democrat":
+		return "ffff00"
+	else:
+		return "FFFFFF"
 def AddCommas(integer):
 	return "{:,}".format(int(integer))
 def expenses(MPName):
@@ -101,8 +110,8 @@ if "q" in form:
 				data['party'],
 				data['constituency'],
 				data["image_width"],
-				"FFFFFF",
-				"",
+				PartyColour(data['party']),
+				"http://www.theyworkforyou.com" + data['image'],
 				full_name, "",
 				"", #Todo: fill these with twfy data
 				"",
@@ -149,7 +158,7 @@ if "q" in form:
 	elif  ( ( (not q.find("mp") == -1) and (not q.find("who") == -1 ) )  and (q.find("for") ==-1)):
 		out ="If you're looking for your MP, ask: <i>Who is the mp for <b class=\"highlight\">postcode</b></i>?"
 	elif ((not q.find("thomas") ==-1)or(not q.find("tom") ==-1)) and (not q.find("cool") == -1): #Suggested by alan - no egotism here.
-		out="Most certianly yes."
+		out="Yes."
 	else:
 		out="Sorry, I didn't understand what you said.<br/> :("
 else:
