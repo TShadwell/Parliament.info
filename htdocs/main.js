@@ -7,6 +7,11 @@ function keyPress(e) {
 }
 function Answer()
 {
+$('#subm').css("backgroundColor", "#D7D7D7");
+document.getElementById("subm").value="";
+$('#load').fadeIn('medium');
+$('#suggest').fadeOut('slow');
+$('#response').fadeOut('slow');
 var xmlhttp;
 
 
@@ -25,14 +30,19 @@ xmlhttp.onreadystatechange=function()
     {
 	if (document.getElementById("response").style.display != "none")
 	{
-	$('#suggest').fadeOut('slow');
-	$('#response').fadeOut('slow');
+	$('#subm').css("backgroundColor", "#18D218");
+	document.getElementById("subm").value="Ask";
+	
 	document.getElementById("response").innerHTML=xmlhttp.responseText;
+	$('#load').fadeOut('fast');
 	$('#response').fadeIn('slow');
 	}
 	else
 	{
 	$('#suggest').fadeOut('slow');
+	$('#load').fadeOut('fast');
+	$('#subm').css("backgroundColor", "#18D218");
+	document.getElementById("subm").value="Ask";
 	document.getElementById("response").innerHTML=xmlhttp.responseText;
 	$('#response').fadeIn('slow');
 	}
